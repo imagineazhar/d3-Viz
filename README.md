@@ -22,6 +22,22 @@ npm run build
 3. Add metadata + lazy loader in `src/visualizations/_registry/visualizations.ts`.
 4. Add a thumbnail at `public/thumbnails/<slug>.png`.
 
+## Add existing Svelte visualizations
+
+Store each entry visualization at:
+
+- `src/visualizations/<slug>/index.svelte`
+
+Auto-integration is enabled. Any `index.svelte` in a direct child folder under
+`src/visualizations` is discovered and added to the gallery route:
+
+- `#/viz/<slug>`
+
+Optional recommended companion files:
+
+- `src/visualizations/<slug>/README.md`
+- `public/thumbnails/<slug>.png`
+
 ## Project highlights
 
 - Metadata-driven gallery (search + tags + sort)

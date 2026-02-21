@@ -1,6 +1,7 @@
 import type { VisualizationMeta } from "./schema";
+import { createSvelteLoader, slugToTitle } from "./svelte";
 
-export const visualizations: VisualizationMeta[] = [
+const manualVisualizations: VisualizationMeta[] = [
   {
     id: "bar-chart-race",
     title: "Bar Growth Pulse",
@@ -27,4 +28,31 @@ export const visualizations: VisualizationMeta[] = [
     complexity: "intermediate",
     loader: () => import("../force-network/index")
   }
+];
+
+const svelteEntries = import.meta.glob("../*/index.svelte");
+const dateStamp = "2026-02-21";
+
+const svelteVisualizations: VisualizationMeta[] = Object.entries(svelteEntries).map(
+  ([path, loader]): VisualizationMeta => {
+    const slug = path.split("/")[1] ?? "svelte-viz";
+    return {
+      id: slug,
+      title: slugToTitle(slug),
+      description: "Svelte visualization module.",
+      tags: ["svelte"],
+      createdAt: dateStamp,
+      updatedAt: dateStamp,
+      thumbnail: `thumbnails/${slug}.png`,
+      route: `/viz/${slug}`,
+      status: "published",
+      complexity: "intermediate",
+      loader: createSvelteLoader(loader)
+    };
+  }
+);
+
+export const visualizations: VisualizationMeta[] = [
+  ...manualVisualizations,
+  ...svelteVisualizations
 ];

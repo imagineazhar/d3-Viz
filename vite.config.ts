@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 const repo = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "d3-viz";
 const base = process.env.GITHUB_ACTIONS ? `/${repo}/` : "/";
 
 export default defineConfig({
-  base
+  base,
+  plugins: [svelte()]
 });

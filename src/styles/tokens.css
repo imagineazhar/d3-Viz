@@ -2,16 +2,16 @@
   --font-heading: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
 
-  --bg-0: #081126;
-  --bg-1: #0f1b3d;
-  --surface: #13244f;
-  --surface-strong: #1b3270;
-  --text: #e5eefc;
-  --text-muted: #9fb3d9;
-  --brand: #4fd1c5;
-  --brand-strong: #18a6b8;
-  --accent: #ffb357;
-  --danger: #ff6b7a;
+  --bg-0: #101010;
+  --bg-1: #171717;
+  --surface: #1f1f1f;
+  --surface-strong: #272727;
+  --text: #f2f2f2;
+  --text-muted: #b3b3b3;
+  --brand: #d9d9d9;
+  --brand-strong: #f2f2f2;
+  --accent: #8a8a8a;
+  --danger: #a0a0a0;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -24,5 +24,5 @@
   --space-6: 1.5rem;
   --space-8: 2rem;
 
-  --shadow-soft: 0 10px 30px rgba(2, 8, 23, 0.28);
+  --shadow-soft: 0 8px 22px rgba(0, 0, 0, 0.32);
 }
